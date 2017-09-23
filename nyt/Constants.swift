@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import FacebookCore
 
 // App constants
 struct Constants {
@@ -17,7 +16,7 @@ struct Constants {
     
     struct Networking {
         private init() {}
-        static let baseURLString = "http://..."
+        static let baseURLString = "https://api.nytimes.com/svc/books/v3/lists.json"
     }
     
     struct NewYorkTimes {
