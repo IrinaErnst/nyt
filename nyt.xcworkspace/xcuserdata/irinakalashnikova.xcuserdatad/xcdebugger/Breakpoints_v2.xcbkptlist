@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "nyt/Controllers/TableViewController.swift"
+            timestampString = "527967887.939146"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "nyt/Protocols/NetworkServiceType.swift"
+            timestampString = "527967887.939272"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "request(target:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in nyt):nyt.NetworkServiceType.request(target: nyt.NYT, completion: (Result.Result&lt;Swift.Dictionary&lt;Swift.String, Any&gt;, Moya.MoyaError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "nyt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/irinakalashnikova/src/Code-Challenges/nyt/nyt/Protocols/NetworkServiceType.swift"
+                  timestampString = "527967888.035824"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "584">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Result.Result&lt;Moya.Response, Moya.MoyaError&gt;) -&gt; () in (extension in nyt):nyt.NetworkServiceType.request(target: nyt.NYT, completion: (Result.Result&lt;Swift.Dictionary&lt;Swift.String, Any&gt;, Moya.MoyaError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "nyt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/irinakalashnikova/src/Code-Challenges/nyt/nyt/Protocols/NetworkServiceType.swift"
+                  timestampString = "527967888.037851"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "108">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

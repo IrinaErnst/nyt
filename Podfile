@@ -6,5 +6,6 @@ target 'nyt' do
   pod 'Moya', '~> 9.0.0'
   pod 'JASON', '~> 3.1'
   pod 'RealmSwift', '~> 2.10.1'
+  pod 'Result'
 
 end

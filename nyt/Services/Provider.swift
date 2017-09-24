@@ -39,18 +39,20 @@ enum NYT {
 let endpointClosure = { (target: NYT) -> Endpoint<NYT> in
     let defaultEndpoint = MoyaProvider<NYT>.defaultEndpointMapping(for: target)
     
-    if target.needsToken {
-        return defaultEndpoint.adding(parameters: ["api-key": Constants.NewYorkTimes.books],
+    //if target.needsToken {
+    //    return defaultEndpoint.adding(parameters: ["api-key": Constants.NewYorkTimes.books],
             //parameters: [:],
-            httpHeaderFields: ["Content-Type": "application/json",
-                               "Authorization": AppStorage.keychain["userTokenKey"] ?? ""])
-    } else {
+      //          httpHeaderFields: ["Content-Type": "application/json"])
+//    } else {
         return defaultEndpoint.adding(newHTTPHeaderFields: ["Content-Type": "application/json"])
-    }
+//    }
 }
 
 // MARK: Conformance to TargetType
 extension NYT: TargetType {
+    
+    // MARK: Header
+    var headers: [String : String]? { return ["api-key": Constants.NewYorkTimes.books]}
     
     // MARK: Base URL
     var baseURL: URL { return URL(string: Constants.Networking.baseURLString)! }
@@ -59,8 +61,8 @@ extension NYT: TargetType {
     var path: String {
         switch self {
             
-        // Signup & login
-        case .retrieveLists(_):
+        // GET List of books
+        case .retrieveLists(dictionary: _):
             return "/lists"
         }
     }
@@ -76,7 +78,7 @@ extension NYT: TargetType {
 
     // MARK: - Task
     var task: Task {
-        return .request
+        return .requestPlain
     }
         
     // MARK: - Parameters

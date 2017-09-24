@@ -6,18 +6,31 @@
 //  Copyright © 2017 irinaernst. All rights reserved.
 //
 
+import Foundation
 import Moya
 import Result
 import JASON
 import Realm
 
+// Strings must be keys.
+public typealias JSONDictionary = [String: Any]
+
+// Protocol for things that can be deserialized with JSON.
+public protocol JSONDeserializable {
+    /// Initialize with a JSON representation
+    ///
+    /// - parameter jsonRepresentation: JSON representation
+    /// - throws: JSONError
+    init(jsonRepresentation: JSONDictionary) throws
+}
+
 // This contains the base networking methods that make use of the MoyaProvider
 protocol NetworkServiceType {
     var provider: MoyaProvider<NYT> { get }
-    var realmDataStore: RealmDataStoreType { get }
+    //var realmDataStore: RealmDataStoreType { get }
     func request(target: NYT, completion: @escaping (Result<JSONDictionary, Moya.MoyaError>) -> Void)
-    func requestObject<T: JSONDeserializable>(target: NYT, completion: @escaping (Result<T,
-        Moya.MoyaError>) -> Void)
+    func requestObject<T: JSONDeserializable>(target: NYT,
+                                              completion: @escaping (Result<T, Moya.MoyaError>) -> Void)
 }
 
 extension NetworkServiceType {
@@ -33,18 +46,18 @@ extension NetworkServiceType {
                     let jsonDictionary = JSON(json).dictionaryValue
                     completion(.success(jsonDictionary))
                 } catch {
-                    log.error(Moya.MoyaError.jsonMapping(response))
+                    print(Moya.MoyaError.jsonMapping(response))
                     completion(.failure(Moya.MoyaError.jsonMapping(response)))
                 }
             case let .failure(error):
-                log.error(error)
-                completion(.failure(Moya.MoyaError.underlying(error)))
+                print("🚫 \(error)")
+                completion(.failure(Moya.MoyaError.underlying(error, nil)))
             }
         }
     }
     
     // Request for an object that conforms to JSONDeserializable
-    func requestObject<T: JSONDeserializable>(target: TRN,
+    func requestObject<T: JSONDeserializable>(target: NYT,
                                               completion: @escaping (Result<T, Moya.MoyaError>) -> Void) {
         self.request(target: target) { result in
             switch result {
@@ -53,10 +66,10 @@ extension NetworkServiceType {
                     let object = try T(jsonRepresentation: json)
                     completion(.success(object))
                 } catch let error {
-                    completion(.failure(Moya.MoyaError.underlying(error)))
+                    completion(.failure(Moya.MoyaError.underlying(error, nil)))
                 }
             case let .failure(error):
-                log.error(error)
+                print("🚫 \(error)")
                 completion(.failure(error))
             }
         }
