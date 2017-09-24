@@ -1,0 +1,31 @@
+PODS:
+  - Alamofire (4.5.1)
+  - JASON (3.1)
+  - Moya (9.0.0):
+    - Moya/Core (= 9.0.0)
+  - Moya/Core (9.0.0):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Realm (2.10.1):
+    - Realm/Headers (= 2.10.1)
+  - Realm/Headers (2.10.1)
+  - RealmSwift (2.10.1):
+    - Realm (= 2.10.1)
+  - Result (3.2.3)
+
+DEPENDENCIES:
+  - JASON (~> 3.1)
+  - Moya (~> 9.0.0)
+  - RealmSwift (~> 2.10.1)
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  JASON: c1204b01c9979eef35b6948ca939aac5e7bef081
+  Moya: cf5e6ee93af526532f92614004b8ad2ea60fd845
+  Realm: fc7a317a5c2c9ba91f5f235ede4e2ea76e9eba0c
+  RealmSwift: 505ed6c15942a2e76f5cfa78a8667cfa997ee75b
+  Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
+
+PODFILE CHECKSUM: d5f2afaf83557a0d4bd05cb2cd812c1e80b044be
+
+COCOAPODS: 1.1.1
