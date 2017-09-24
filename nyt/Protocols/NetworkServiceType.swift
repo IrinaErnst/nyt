@@ -22,7 +22,7 @@ protocol NetworkServiceType {
 
 extension NetworkServiceType {
     
-    // Makes a request to the target via the provider.
+    // Request for an JSONDeserializableto the target via the provider.
     func request(target: NYT, completion: @escaping (Result<JSONDictionary, Moya.MoyaError>) -> Void) {
         
         self.provider.request(target) { result in
@@ -39,6 +39,25 @@ extension NetworkServiceType {
             case let .failure(error):
                 log.error(error)
                 completion(.failure(Moya.MoyaError.underlying(error)))
+            }
+        }
+    }
+    
+    // Request for an object that conforms to JSONDeserializable
+    func requestObject<T: JSONDeserializable>(target: TRN,
+                                              completion: @escaping (Result<T, Moya.MoyaError>) -> Void) {
+        self.request(target: target) { result in
+            switch result {
+            case let .success(json):
+                do {
+                    let object = try T(jsonRepresentation: json)
+                    completion(.success(object))
+                } catch let error {
+                    completion(.failure(Moya.MoyaError.underlying(error)))
+                }
+            case let .failure(error):
+                log.error(error)
+                completion(.failure(error))
             }
         }
     }

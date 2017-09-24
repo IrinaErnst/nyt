@@ -87,17 +87,57 @@
 			isa = PBXGroup;
 			children = (
 				A7D8EF161F75BAA800AE8334 /* AppDelegate.swift */,
-				A7D8EF281F75BAF300AE8334 /* Colors.swift */,
+				A7D8EF351F77411000AE8334 /* Common */,
+				A7D8EF331F7740D300AE8334 /* Services */,
+				A7D8EF341F7740EC00AE8334 /* Protocols */,
+				A7D8EF371F77414200AE8334 /* Controllers */,
+				A7D8EF361F77412D00AE8334 /* Resources */,
+			);
+			path = nyt;
+			sourceTree = "<group>";
+		};
+		A7D8EF331F7740D300AE8334 /* Services */ = {
+			isa = PBXGroup;
+			children = (
 				A7D8EF2E1F75F45000AE8334 /* Provider.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A7D8EF341F7740EC00AE8334 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
 				A7D8EF301F7703E700AE8334 /* NetworkServiceType.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A7D8EF351F77411000AE8334 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A7D8EF281F75BAF300AE8334 /* Colors.swift */,
 				A7D8EF2C1F75CBB800AE8334 /* Constants.swift */,
-				A7D8EF2A1F75BBB800AE8334 /* TableViewController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		A7D8EF361F77412D00AE8334 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				A7D8EF1A1F75BAA800AE8334 /* Main.storyboard */,
 				A7D8EF1D1F75BAA800AE8334 /* Assets.xcassets */,
 				A7D8EF1F1F75BAA800AE8334 /* LaunchScreen.storyboard */,
 				A7D8EF221F75BAA800AE8334 /* Info.plist */,
 			);
-			path = nyt;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A7D8EF371F77414200AE8334 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A7D8EF2A1F75BBB800AE8334 /* TableViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
