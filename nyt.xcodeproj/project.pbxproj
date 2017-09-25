@@ -21,6 +21,8 @@
 		A7D8EF3B1F7751A500AE8334 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7D8EF3A1F7751A500AE8334 /* Default-568h@2x.png */; };
 		A7D8EF3D1F77578100AE8334 /* DefaultAlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8EF3C1F77578100AE8334 /* DefaultAlamofireManager.swift */; };
 		A7D8EF3F1F781A3700AE8334 /* LoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8EF3E1F781A3500AE8334 /* LoggerPlugin.swift */; };
+		A7D8EF411F7840D100AE8334 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8EF401F7840D100AE8334 /* Book.swift */; };
+		A7D8EF441F787EE100AE8334 /* Book_details.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8EF431F787EE000AE8334 /* Book_details.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		A7D8EF3A1F7751A500AE8334 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A7D8EF3C1F77578100AE8334 /* DefaultAlamofireManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAlamofireManager.swift; sourceTree = "<group>"; };
 		A7D8EF3E1F781A3500AE8334 /* LoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerPlugin.swift; sourceTree = "<group>"; };
+		A7D8EF401F7840D100AE8334 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		A7D8EF431F787EE000AE8334 /* Book_details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book_details.swift; sourceTree = "<group>"; };
 		CB051E422EAAE7CFE615A132 /* Pods-nyt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyt.release.xcconfig"; path = "Pods/Target Support Files/Pods-nyt/Pods-nyt.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,6 +103,7 @@
 				A7D8EF351F77411000AE8334 /* Common */,
 				A7D8EF341F7740EC00AE8334 /* Protocols */,
 				A7D8EF331F7740D300AE8334 /* Services */,
+				A7D8EF421F7840DC00AE8334 /* Models */,
 				A7D8EF371F77414200AE8334 /* Controllers */,
 				A7D8EF361F77412D00AE8334 /* Resources */,
 				A7D8EF221F75BAA800AE8334 /* Info.plist */,
@@ -150,6 +155,15 @@
 				A7D8EF2A1F75BBB800AE8334 /* TableViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A7D8EF421F7840DC00AE8334 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A7D8EF401F7840D100AE8334 /* Book.swift */,
+				A7D8EF431F787EE000AE8334 /* Book_details.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,10 +294,12 @@
 				A7D8EF311F7703E700AE8334 /* NetworkServiceType.swift in Sources */,
 				A7D8EF3F1F781A3700AE8334 /* LoggerPlugin.swift in Sources */,
 				A7D8EF291F75BAF300AE8334 /* Colors.swift in Sources */,
+				A7D8EF441F787EE100AE8334 /* Book_details.swift in Sources */,
 				A7D8EF391F77467800AE8334 /* BookService.swift in Sources */,
 				A7D8EF2B1F75BBB800AE8334 /* TableViewController.swift in Sources */,
 				A7D8EF171F75BAA800AE8334 /* AppDelegate.swift in Sources */,
 				A7D8EF2F1F75F45000AE8334 /* Provider.swift in Sources */,
+				A7D8EF411F7840D100AE8334 /* Book.swift in Sources */,
 				A7D8EF2D1F75CBB800AE8334 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

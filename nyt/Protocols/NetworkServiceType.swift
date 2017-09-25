@@ -50,7 +50,7 @@ extension NetworkServiceType {
                     completion(.failure(Moya.MoyaError.jsonMapping(response)))
                 }
             case let .failure(error):
-                print("🚫 \(error)")
+                print("💔 \(error)")
                 completion(.failure(Moya.MoyaError.underlying(error, nil)))
             }
         }
@@ -69,7 +69,7 @@ extension NetworkServiceType {
                     completion(.failure(Moya.MoyaError.underlying(error, nil)))
                 }
             case let .failure(error):
-                print("🚫 \(error)")
+                print("💔 \(error)")
                 completion(.failure(error))
             }
         }

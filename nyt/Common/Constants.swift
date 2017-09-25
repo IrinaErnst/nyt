@@ -16,7 +16,7 @@ struct Constants {
     
     struct Networking {
         private init() {}
-        static let baseURLString = "https://api.nytimes.com/svc/books/v3/lists.json"
+        static let baseURLString = "https://api.nytimes.com/svc/books/v3"
     }
     
     struct NewYorkTimes {

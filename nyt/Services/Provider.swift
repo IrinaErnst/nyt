@@ -31,7 +31,8 @@ enum NYT {
      GET  /lists/{date}/{list}.json
      GET  /reviews.{format}
      */
-
+    
+    // GET  /lists.{format}
     case retrieveLists(dictionary: JSONDictionary)
 }
 
@@ -78,7 +79,15 @@ extension NYT: TargetType {
 
     // MARK: - Task
     var task: Task {
-        return .requestPlain
+        switch self {
+        case .retrieveLists(let dictionary):
+            return .requestParameters(parameters: dictionary, encoding: URLEncoding.default)
+//        case .branches(_, let protected):
+//            return .requestParameters(parameters: ["protected": "\(protected)"], encoding: URLEncoding.default)
+        default:
+            return .requestPlain
+        }
+//        return .requestParameters(parameters: [String: Any]?, encoding: JSONEncoding.default)
     }
         
     // MARK: - Parameters
@@ -92,12 +101,13 @@ extension NYT: TargetType {
     }
     
     var parameterEncoding: ParameterEncoding {
-        switch self {
-        case .retrieveLists:
-            return URLEncoding.default
-        default:
+//        switch self {
+//        case .retrieveLists:
+//            //return URLEncoding.default
+//            return JSONEncoding.default
+//        default:
             return JSONEncoding.default
-        }
+//        }
     }
     
     // MARK: - Sample Data.

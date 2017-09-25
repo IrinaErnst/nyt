@@ -17,12 +17,13 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let target = NYT.retrieveLists(dictionary: ["":""])
+        let target = NYT.retrieveLists(dictionary: ["list":"e-book-fiction"])
         
         bookService.retrieveListsOfBooks(for: target,
                                          completion: { result in
             switch result {
             case .success(let result):
+                // TODO: display result in Table view
                 print("❤️❤️❤️ \(result)")
                 return
             case let .failure(error):

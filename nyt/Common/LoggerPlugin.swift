@@ -66,13 +66,13 @@ final class LoggerPlugin: PluginType {
                 return
         }
         
-        var logString = "💛 curl -X \(method)"
+        var logString = " curl -X \(method)"
         
         headers.forEach({ (key, value) in
-            logString.append("💛 -H \'\(key): \(value)\'")
+            logString.append(" -H \'\(key): \(value)\'")
         })
         
-        logString.append("💛 URL: \'\(url.absoluteString)\'")
+        logString.append(" URL: \'\(url.absoluteString)\'")
         
         switch method {
         case "PUT", "PATCH", "POST":
