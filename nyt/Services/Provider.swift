@@ -82,12 +82,9 @@ extension NYT: TargetType {
         switch self {
         case .retrieveLists(let dictionary):
             return .requestParameters(parameters: dictionary, encoding: URLEncoding.default)
-//        case .branches(_, let protected):
-//            return .requestParameters(parameters: ["protected": "\(protected)"], encoding: URLEncoding.default)
         default:
             return .requestPlain
         }
-//        return .requestParameters(parameters: [String: Any]?, encoding: JSONEncoding.default)
     }
         
     // MARK: - Parameters

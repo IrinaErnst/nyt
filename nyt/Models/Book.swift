@@ -48,17 +48,17 @@ final class Book: Object, Deserializable {
             book_details = Book_details.deserialize(from: bookDetailsJson)
         }
         
-        return Session(value: ["list_name": list_name,
-                               "display_name": display_name,
-                               "bestsellers_date": bestsellers_date,
-                               "published_date": published_date,
-                               "rank": rank,
-                               "rank_last_week": rank_last_week,
-                               "weeks_on_list": weeks_on_list,
-                               "asterisk": asterisk,
-                               "dagger": dagger,
-                               "amazon_product_url": amazon_product_url,
-                               "book_details": book_details
+        return Book(value: ["list_name": list_name,
+                            "display_name": display_name,
+                            "bestsellers_date": bestsellers_date,
+                            "published_date": published_date,
+                            "rank": rank,
+                            "rank_last_week": rank_last_week,
+                            "weeks_on_list": weeks_on_list,
+                            "asterisk": asterisk,
+                            "dagger": dagger,
+                            "amazon_product_url": amazon_product_url,
+                            "book_details": book_details
                                
             ])
     }

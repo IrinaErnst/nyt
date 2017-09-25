@@ -12,18 +12,6 @@ import Result
 import JASON
 import Realm
 
-// Strings must be keys.
-public typealias JSONDictionary = [String: Any]
-
-// Protocol for things that can be deserialized with JSON.
-public protocol JSONDeserializable {
-    /// Initialize with a JSON representation
-    ///
-    /// - parameter jsonRepresentation: JSON representation
-    /// - throws: JSONError
-    init(jsonRepresentation: JSONDictionary) throws
-}
-
 // This contains the base networking methods that make use of the MoyaProvider
 protocol NetworkServiceType {
     var provider: MoyaProvider<NYT> { get }
