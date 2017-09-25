@@ -13,19 +13,18 @@ import JASON
 
 // Book Model
 final class Book: Object, Deserializable {
-    dynamic var list_name = ""
-    dynamic var display_name = ""
-    dynamic var published_date = ""
-    dynamic var bestsellers_date = ""
-    dynamic var rank = 0
-    dynamic var rank_last_week = 0
-    dynamic var weeks_on_list = 0
-    dynamic var asterisk = 0
-    dynamic var dagger = 0
-    dynamic var amazon_product_url = ""
-    dynamic var book_details: Book_details?
-    
-    let myClient = LinkingObjects(fromType: Client.self, property: "mySessions")
+    @objc dynamic var list_name = ""
+    @objc dynamic var display_name = ""
+    @objc dynamic var published_date = ""
+    @objc dynamic var bestsellers_date = ""
+    @objc dynamic var rank = 0
+    @objc dynamic var rank_last_week = 0
+    @objc dynamic var weeks_on_list = 0
+    @objc dynamic var asterisk = 0
+    @objc dynamic var dagger = 0
+    @objc dynamic var amazon_product_url = ""
+    @objc dynamic var book_details: Book_details?
+    @objc dynamic var review: Review?
     
     override static func primaryKey() -> String? {
         return "list_name"
@@ -44,8 +43,12 @@ final class Book: Object, Deserializable {
         let amazon_product_url = json["amazon_product_url"]
         
         var book_details = Book_details()
-        if let bookDetailsJson = json["book_details"] {
+        if let bookDetailsJson = json["book_details"] as? JSONDictionary {
             book_details = Book_details.deserialize(from: bookDetailsJson)
+        }
+        var review = Review()
+        if let reviewJson = json["reviews"] as? JSONDictionary {
+            review = Review.deserialize(from: reviewJson)
         }
         
         return Book(value: ["list_name": list_name,
@@ -58,7 +61,8 @@ final class Book: Object, Deserializable {
                             "asterisk": asterisk,
                             "dagger": dagger,
                             "amazon_product_url": amazon_product_url,
-                            "book_details": book_details
+                            "book_details": book_details,
+                            "review": review
                                
             ])
     }

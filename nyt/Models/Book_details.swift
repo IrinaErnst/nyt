@@ -13,15 +13,15 @@ import JASON
 
 // Book Details Model
 final class Book_details: Object, Deserializable {
-    dynamic var primary_isbn13 = ""
-    dynamic var title = ""
-    dynamic var description = ""
-    dynamic var contributor = ""
-    dynamic var author = ""
-    dynamic var contributor_note = ""
-    dynamic var price = 0
-    dynamic var age_group = ""
-    dynamic var publisher = ""
+    @objc dynamic var primary_isbn13 = ""
+    @objc dynamic var title = ""
+    @objc dynamic var full_description = ""
+    @objc dynamic var contributor = ""
+    @objc dynamic var author = ""
+    @objc dynamic var contributor_note = ""
+    @objc dynamic var price = 0
+    @objc dynamic var age_group = ""
+    @objc dynamic var publisher = ""
     
     override static func primaryKey() -> String? {
         return "primary_isbn13"
@@ -30,7 +30,7 @@ final class Book_details: Object, Deserializable {
     static func deserialize(from json: JSONDictionary) -> Book_details {
         let primary_isbn13 = json["primary_isbn13"]
         let title = json["title"]
-        let description = json["description"]
+        let full_description = json["description"]
         let contributor = json["contributor"]
         let author = json["author"]
         let contributor_note = json["contributor_note"]
@@ -40,7 +40,7 @@ final class Book_details: Object, Deserializable {
         
         return Book_details(value: ["primary_isbn13": primary_isbn13,
                                     "title": title,
-                                    "description": description,
+                                    "full_description": full_description,
                                     "contributor": contributor,
                                     "author": author,
                                     "contributor_note": contributor_note,
@@ -48,4 +48,5 @@ final class Book_details: Object, Deserializable {
                                     "age_group": age_group,
                                     "publisher": publisher
             ])
+    }
 }

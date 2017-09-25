@@ -68,7 +68,6 @@ extension NYT: TargetType {
         }
     }
 
-
     // MARK: - Method
     var method: Moya.Method {
         switch self {

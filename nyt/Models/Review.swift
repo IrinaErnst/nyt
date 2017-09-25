@@ -13,10 +13,10 @@ import JASON
 
 // Review Model
 final class Review: Object, Deserializable {
-    dynamic var book_review_link = ""
-    dynamic var first_chapter_link = ""
-    dynamic var sunday_review_link = ""
-    dynamic var article_chapter_link = ""
+    @objc dynamic var book_review_link = ""
+    @objc dynamic var first_chapter_link = ""
+    @objc dynamic var sunday_review_link = ""
+    @objc dynamic var article_chapter_link = ""
     
     override static func primaryKey() -> String? {
         return "book_review_link"
@@ -33,4 +33,5 @@ final class Review: Object, Deserializable {
                               "sunday_review_link": sunday_review_link,
                               "article_chapter_link": article_chapter_link
             ])
+    }
 }
