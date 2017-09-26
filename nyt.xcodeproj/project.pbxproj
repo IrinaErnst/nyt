@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		37510871FFD4931336D98E6A /* Pods_nyt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCF159F52EC9B122164E87E /* Pods_nyt.framework */; };
+		A7C049641F7B1C7F00AA1B42 /* RealmDataStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C049631F7B1C7E00AA1B42 /* RealmDataStoreType.swift */; };
 		A7D8EF171F75BAA800AE8334 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8EF161F75BAA800AE8334 /* AppDelegate.swift */; };
 		A7D8EF1C1F75BAA800AE8334 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D8EF1A1F75BAA800AE8334 /* Main.storyboard */; };
 		A7D8EF1E1F75BAA800AE8334 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7D8EF1D1F75BAA800AE8334 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		6E85F15FDC5EE3BD8E54E343 /* Pods-nyt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nyt/Pods-nyt.debug.xcconfig"; sourceTree = "<group>"; };
 		7FCF159F52EC9B122164E87E /* Pods_nyt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nyt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7C049631F7B1C7E00AA1B42 /* RealmDataStoreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataStoreType.swift; sourceTree = "<group>"; };
 		A7D8EF131F75BAA800AE8334 /* nyt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nyt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D8EF161F75BAA800AE8334 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7D8EF1B1F75BAA800AE8334 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				A7D8EF301F7703E700AE8334 /* NetworkServiceType.swift */,
+				A7C049631F7B1C7E00AA1B42 /* RealmDataStoreType.swift */,
 				A7D8EF471F788AB500AE8334 /* Deserializable.swift */,
 			);
 			path = Protocols;
@@ -304,6 +307,7 @@
 				A7D8EF3D1F77578100AE8334 /* DefaultAlamofireManager.swift in Sources */,
 				A7D8EF311F7703E700AE8334 /* NetworkServiceType.swift in Sources */,
 				A7D8EF3F1F781A3700AE8334 /* LoggerPlugin.swift in Sources */,
+				A7C049641F7B1C7F00AA1B42 /* RealmDataStoreType.swift in Sources */,
 				A7D8EF291F75BAF300AE8334 /* Colors.swift in Sources */,
 				A7D8EF441F787EE100AE8334 /* Book_details.swift in Sources */,
 				A7D8EF461F78821800AE8334 /* Review.swift in Sources */,
