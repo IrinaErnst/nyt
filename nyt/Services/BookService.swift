@@ -42,27 +42,36 @@ struct BookService: NetworkServiceType {
     
     // Updates the user's profile information (general) for a target
     func retrieveListsOfBooks(for target: NYT,
-                       completion: @escaping (Result<JSONDictionary, Moya.MoyaError>) -> Void) {
+                       completion: @escaping (Result<[Book], Moya.MoyaError>) -> Void) {
         
         request(target: target) { result in
             switch result {
             case let .success(json):
+                let booksJson = json["results"] as! JSONArray
                // let jsonResponse: [String: AnyObject]?
 //                if UserDefaults.standard.bool(forKey: "isTrainer") {
 //                    jsonResponse = json["trainer"] as? [String: AnyObject]
 //                } else {
 //                    jsonResponse = json["client"] as? [String: AnyObject]
 //                }
-//                if let jsonResponse = jsonResponse {
-//                    do {
+                //if let booksJson = json {
+                print("Success 💁🏻 -> updated user general settings: \(booksJson)")
+                
+                var books = [Book]()
+                for book in booksJson {
+                    books.append(Book.deserialize(from: book))
+                }
+                    
+                   // do {
 //                        try self.realmDataStore.updateCurrentUser(AppStorage.userID, jsonDictionary: jsonResponse)
-//                        completion(.success(jsonResponse))
+                        print("Success 💁🏻 -> updated user general settings: \(books)")
+                        completion(.success(books))
 //                    } catch let error {
-//                        log.error(error)
+//                        print("💔 \(error)")
 //                    }
-//                }
-                print("Success 💁🏻 -> updated user general settings: \(json)")
-                completion(.success(json))
+                //}
+                //print("Success 💁🏻 -> updated user general settings: \(json)")
+               // completion(.success(json))
             case let .failure(error):
                 completion(.failure(MoyaError.underlying(error, nil)))
             }

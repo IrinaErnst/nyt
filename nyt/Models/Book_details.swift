@@ -13,6 +13,8 @@ import JASON
 
 // Book Details Model
 final class Book_details: Object, Deserializable {
+    
+    // MARK: - Properties
     @objc dynamic var primary_isbn13 = ""
     @objc dynamic var title = ""
     @objc dynamic var full_description = ""
@@ -23,10 +25,12 @@ final class Book_details: Object, Deserializable {
     @objc dynamic var age_group = ""
     @objc dynamic var publisher = ""
     
+    // MARK: - Primary key
     override static func primaryKey() -> String? {
         return "primary_isbn13"
     }
     
+    // MARK: - Deserializer
     static func deserialize(from json: JSONDictionary) -> Book_details {
         let primary_isbn13 = json["primary_isbn13"]
         let title = json["title"]

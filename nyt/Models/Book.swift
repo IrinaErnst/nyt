@@ -13,6 +13,8 @@ import JASON
 
 // Book Model
 final class Book: Object, Deserializable {
+    
+    // MARK: - Properties
     @objc dynamic var list_name = ""
     @objc dynamic var display_name = ""
     @objc dynamic var published_date = ""
@@ -24,12 +26,14 @@ final class Book: Object, Deserializable {
     @objc dynamic var dagger = 0
     @objc dynamic var amazon_product_url = ""
     @objc dynamic var book_details: Book_details?
-    @objc dynamic var review: Review?
+    var reviews = List<Review>()
     
+    // MARK: - Primary key
     override static func primaryKey() -> String? {
         return "list_name"
     }
     
+    // MARK: - Deserializer
     static func deserialize(from json: JSONDictionary) -> Book {
         let list_name = json["list_name"]
         let display_name = json["display_name"]
@@ -43,12 +47,18 @@ final class Book: Object, Deserializable {
         let amazon_product_url = json["amazon_product_url"]
         
         var book_details = Book_details()
-        if let bookDetailsJson = json["book_details"] as? JSONDictionary {
-            book_details = Book_details.deserialize(from: bookDetailsJson)
+        if let bookDetailsJsonArray = json["book_details"] as? JSONArray {
+            if let bookDetailsJson = bookDetailsJsonArray.first {
+                book_details = Book_details.deserialize(from: bookDetailsJson)
+            }
         }
-        var review = Review()
-        if let reviewJson = json["reviews"] as? JSONDictionary {
-            review = Review.deserialize(from: reviewJson)
+        var reviews = [Review]()
+        if let reviewsJsonArray = json["reviews"] as? JSONArray {
+            for review in reviewsJsonArray {
+                //if let reviewJson = bookDetailsJsonArray.first as? JSONDictionary {
+                    reviews.append(Review.deserialize(from: review))
+                //}
+            }
         }
         
         return Book(value: ["list_name": list_name,
@@ -62,7 +72,7 @@ final class Book: Object, Deserializable {
                             "dagger": dagger,
                             "amazon_product_url": amazon_product_url,
                             "book_details": book_details,
-                            "review": review
+                            "reviews": reviews
                                
             ])
     }

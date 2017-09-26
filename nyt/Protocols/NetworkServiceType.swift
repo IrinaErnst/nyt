@@ -62,6 +62,28 @@ extension NetworkServiceType {
             }
         }
     }
+    
+    // Makes a request array to the target via the provider.
+    func requestArray(target: NYT, completion: @escaping (Result<JSONArray, Moya.MoyaError>) -> Void) {
+        
+        self.provider.request(target) { result in
+            switch result {
+            case let .success(response):
+                do {
+                    
+                    let json = try response.mapJSON()
+                    guard let jsonArray = JSON(json).arrayValue as? JSONArray else { return }
+                    completion(.success(jsonArray))
+                } catch {
+                    print("💔 \(Moya.MoyaError.jsonMapping(response))")
+                    completion(.failure(Moya.MoyaError.jsonMapping(response)))
+                }
+            case let .failure(error):
+                print("💔 \(error)")
+                completion(.failure(Moya.MoyaError.underlying(error, nil)))
+            }
+        }
+    }
 
 }
 
