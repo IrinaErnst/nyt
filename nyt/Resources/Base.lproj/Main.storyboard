@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -42,13 +41,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="XiE-EI-PXb">
-                                                    <rect key="frame" x="28" y="12" width="286" height="36.5"/>
+                                                    <rect key="frame" x="20" y="12" width="154.5" height="36.5"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="v5E-GI-mCg">
-                                                            <rect key="frame" x="0.0" y="0.0" width="24" height="19.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="13" height="19.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QP7-ll-jcI">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="24" height="19.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="13" height="19.5"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -56,16 +55,16 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="89E-8K-0bC">
-                                                            <rect key="frame" x="29" y="0.0" width="257" height="36.5"/>
+                                                            <rect key="frame" x="18" y="0.0" width="136.5" height="36.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of the book" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wf9-Oz-9Ee">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="257" height="19.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="136.5" height="19.5"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Author Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oId-2v-xan">
-                                                                    <rect key="frame" x="0.0" y="19.5" width="257" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="19.5" width="136.5" height="17"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <color key="textColor" red="0.10921428352594376" green="0.6745532751083374" blue="0.73855739831924438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -77,11 +76,15 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="XiE-EI-PXb" firstAttribute="centerY" secondItem="Uwo-4R-Op6" secondAttribute="centerY" id="3oe-XV-d8f"/>
-                                                <constraint firstItem="XiE-EI-PXb" firstAttribute="leading" secondItem="Uwo-4R-Op6" secondAttribute="leadingMargin" constant="20" id="mx5-Bk-LUJ"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="XiE-EI-PXb" secondAttribute="trailing" constant="20" id="wbT-fA-d7V"/>
+                                                <constraint firstItem="XiE-EI-PXb" firstAttribute="leading" secondItem="Uwo-4R-Op6" secondAttribute="leading" constant="20" id="tE3-G2-4KE"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="authorNameLabel" destination="oId-2v-xan" id="O5O-eF-5dK"/>
+                                            <outlet property="bookNameLabel" destination="Wf9-Oz-9Ee" id="5cu-53-72c"/>
+                                            <outlet property="rankLabel" destination="QP7-ll-jcI" id="9zj-G3-Mfd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

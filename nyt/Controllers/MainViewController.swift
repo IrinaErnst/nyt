@@ -63,7 +63,7 @@ extension MainViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: cellID,
                                                      for: indexPath) as! BookTableViewCell
     
-            // cell.book = booksToDisplay[indexPath.row]
+            cell.book = booksToDisplay[indexPath.row]
             return cell
         }
 
@@ -87,7 +87,7 @@ extension MainViewController: UITableViewDelegate{
         tableView.delegate = self
         tableView.dataSource = self
 
-        tableView.bounces = false
+        // tableView.bounces = false
         tableView.tableFooterView = UIView(frame: .zero)
     }
 }

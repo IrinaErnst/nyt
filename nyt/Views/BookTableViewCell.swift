@@ -10,15 +10,39 @@ import UIKit
 
 class BookTableViewCell: UITableViewCell {
 
+    // MARK: - IBOutlets
+    @IBOutlet weak var rankLabel: UILabel!
+    @IBOutlet weak var bookNameLabel: UILabel!
+    @IBOutlet weak var authorNameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-
+    
+    var book: Book? {
+        
+        didSet{
+            
+            if let rank = book?.rank {
+                rankLabel.text = (String(rank) + ".").uppercased()
+            }
+            
+            if let title = book?.book_details?.title {
+                bookNameLabel.text = title
+            }
+            
+            if let authorName = book?.book_details?.author {
+                authorNameLabel.text = "by " + authorName
+            }
+            
+        }
+    }
+    
 }
+
+
+
