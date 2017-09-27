@@ -54,18 +54,21 @@ class MainViewController: UIViewController {
 // MARK: - Table View Data Store
 extension MainViewController: UITableViewDataSource {
     
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            // #warning Incomplete implementation, return the number of rows
-            return booksToDisplay.count
-        }
-    
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellID,
-                                                     for: indexPath) as! BookTableViewCell
-    
-            cell.book = booksToDisplay[indexPath.row]
-            return cell
-        }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return booksToDisplay.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID,
+                                                 for: indexPath) as! BookTableViewCell
+
+        cell.book = booksToDisplay[indexPath.row]
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
 
 }
 
