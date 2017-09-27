@@ -15,7 +15,7 @@ import Realm
 // This contains the base networking methods that make use of the MoyaProvider
 protocol NetworkServiceType {
     var provider: MoyaProvider<NYT> { get }
-    //var realmDataStore: RealmDataStoreType { get }
+    var realmDataStore: RealmDataStoreType { get }
     func request(target: NYT, completion: @escaping (Result<JSONDictionary, Moya.MoyaError>) -> Void)
     func requestObject<T: JSONDeserializable>(target: NYT,
                                               completion: @escaping (Result<T, Moya.MoyaError>) -> Void)

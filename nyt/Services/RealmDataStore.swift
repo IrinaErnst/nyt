@@ -18,4 +18,9 @@ class RealmDataStore: RealmDataStoreType {
     init(realm: Realm) {
         self.realm = realm
     }
+    
+    // Convenience initializer for testing - see test example.
+    convenience init() {
+        self.init(realm: try! Realm())
+    }
 }

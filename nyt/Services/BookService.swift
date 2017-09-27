@@ -10,21 +10,22 @@ import Foundation
 import Moya
 import Result
 import RealmSwift
+import Realm
 import JASON
 
 struct BookService: NetworkServiceType {
     
     // MARK: - Properties
-    //private(set) var realmDataStore: RealmDataStoreType
+    private(set) var realmDataStore: RealmDataStoreType
     private(set) var provider: MoyaProvider<NYT>
     
     // MARK: - Initializers(s)
-    init(/*realmDataStore: RealmDataStoreType = RealmDataStore(),*/
+    init(realmDataStore: RealmDataStoreType = RealmDataStore(),
          provider: MoyaProvider<NYT> = MoyaProvider<NYT>(endpointClosure: endpointClosure,
                                                          manager: DefaultAlamofireManager.sharedManager,
                                                          plugins: [LoggerPlugin()]))
     {
-        //self.realmDataStore = realmDataStore
+        self.realmDataStore = realmDataStore
         self.provider = provider
     }
     
@@ -48,30 +49,19 @@ struct BookService: NetworkServiceType {
             switch result {
             case let .success(json):
                 let booksJson = json["results"] as! JSONArray
-               // let jsonResponse: [String: AnyObject]?
-//                if UserDefaults.standard.bool(forKey: "isTrainer") {
-//                    jsonResponse = json["trainer"] as? [String: AnyObject]
-//                } else {
-//                    jsonResponse = json["client"] as? [String: AnyObject]
-//                }
-                //if let booksJson = json {
-                print("Success 💁🏻 -> updated user general settings: \(booksJson)")
+                //let bookListJson = json["results"] as! JSONDictionary
                 
                 var books = [Book]()
                 for book in booksJson {
                     books.append(Book.deserialize(from: book))
                 }
                     
-                   // do {
-//                        try self.realmDataStore.updateCurrentUser(AppStorage.userID, jsonDictionary: jsonResponse)
-                        print("Success 💁🏻 -> updated user general settings: \(books)")
-                        completion(.success(books))
-//                    } catch let error {
-//                        print("💔 \(error)")
-//                    }
-                //}
-                //print("Success 💁🏻 -> updated user general settings: \(json)")
-               // completion(.success(json))
+                do {
+                    try self.realmDataStore.insertOrUpdateObjectsFromArray(objects: books)
+                    completion(.success(books))
+                } catch let error {
+                    print("💔 \(error)")
+                }
             case let .failure(error):
                 completion(.failure(MoyaError.underlying(error, nil)))
             }

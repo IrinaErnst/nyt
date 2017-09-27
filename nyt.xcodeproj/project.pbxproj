@@ -10,12 +10,13 @@
 		37510871FFD4931336D98E6A /* Pods_nyt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCF159F52EC9B122164E87E /* Pods_nyt.framework */; };
 		A7C049641F7B1C7F00AA1B42 /* RealmDataStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C049631F7B1C7E00AA1B42 /* RealmDataStoreType.swift */; };
 		A7C049661F7B1CEE00AA1B42 /* RealmDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C049651F7B1CEE00AA1B42 /* RealmDataStore.swift */; };
+		A7C049681F7BF60600AA1B42 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C049671F7BF60600AA1B42 /* BookTableViewCell.swift */; };
 		A7D8EF171F75BAA800AE8334 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8EF161F75BAA800AE8334 /* AppDelegate.swift */; };
 		A7D8EF1C1F75BAA800AE8334 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D8EF1A1F75BAA800AE8334 /* Main.storyboard */; };
 		A7D8EF1E1F75BAA800AE8334 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7D8EF1D1F75BAA800AE8334 /* Assets.xcassets */; };
 		A7D8EF211F75BAA800AE8334 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D8EF1F1F75BAA800AE8334 /* LaunchScreen.storyboard */; };
 		A7D8EF291F75BAF300AE8334 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8EF281F75BAF300AE8334 /* Colors.swift */; };
-		A7D8EF2B1F75BBB800AE8334 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8EF2A1F75BBB800AE8334 /* TableViewController.swift */; };
+		A7D8EF2B1F75BBB800AE8334 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8EF2A1F75BBB800AE8334 /* MainViewController.swift */; };
 		A7D8EF2D1F75CBB800AE8334 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8EF2C1F75CBB800AE8334 /* Constants.swift */; };
 		A7D8EF2F1F75F45000AE8334 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8EF2E1F75F45000AE8334 /* Provider.swift */; };
 		A7D8EF311F7703E700AE8334 /* NetworkServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8EF301F7703E700AE8334 /* NetworkServiceType.swift */; };
@@ -35,6 +36,7 @@
 		7FCF159F52EC9B122164E87E /* Pods_nyt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nyt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C049631F7B1C7E00AA1B42 /* RealmDataStoreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataStoreType.swift; sourceTree = "<group>"; };
 		A7C049651F7B1CEE00AA1B42 /* RealmDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataStore.swift; sourceTree = "<group>"; };
+		A7C049671F7BF60600AA1B42 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		A7D8EF131F75BAA800AE8334 /* nyt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nyt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D8EF161F75BAA800AE8334 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7D8EF1B1F75BAA800AE8334 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -42,7 +44,7 @@
 		A7D8EF201F75BAA800AE8334 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7D8EF221F75BAA800AE8334 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7D8EF281F75BAF300AE8334 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		A7D8EF2A1F75BBB800AE8334 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		A7D8EF2A1F75BBB800AE8334 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A7D8EF2C1F75CBB800AE8334 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A7D8EF2E1F75F45000AE8334 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		A7D8EF301F7703E700AE8334 /* NetworkServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceType.swift; sourceTree = "<group>"; };
@@ -87,6 +89,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A7C049691F7BF60C00AA1B42 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A7C049671F7BF60600AA1B42 /* BookTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A7D8EF0A1F75BAA800AE8334 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +124,7 @@
 				A7D8EF341F7740EC00AE8334 /* Protocols */,
 				A7D8EF331F7740D300AE8334 /* Services */,
 				A7D8EF421F7840DC00AE8334 /* Models */,
+				A7C049691F7BF60C00AA1B42 /* Views */,
 				A7D8EF371F77414200AE8334 /* Controllers */,
 				A7D8EF361F77412D00AE8334 /* Resources */,
 				A7D8EF221F75BAA800AE8334 /* Info.plist */,
@@ -166,7 +177,7 @@
 		A7D8EF371F77414200AE8334 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A7D8EF2A1F75BBB800AE8334 /* TableViewController.swift */,
+				A7D8EF2A1F75BBB800AE8334 /* MainViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -314,9 +325,10 @@
 				A7D8EF291F75BAF300AE8334 /* Colors.swift in Sources */,
 				A7C049661F7B1CEE00AA1B42 /* RealmDataStore.swift in Sources */,
 				A7D8EF441F787EE100AE8334 /* Book_details.swift in Sources */,
+				A7C049681F7BF60600AA1B42 /* BookTableViewCell.swift in Sources */,
 				A7D8EF461F78821800AE8334 /* Review.swift in Sources */,
 				A7D8EF391F77467800AE8334 /* BookService.swift in Sources */,
-				A7D8EF2B1F75BBB800AE8334 /* TableViewController.swift in Sources */,
+				A7D8EF2B1F75BBB800AE8334 /* MainViewController.swift in Sources */,
 				A7D8EF171F75BAA800AE8334 /* AppDelegate.swift in Sources */,
 				A7D8EF2F1F75F45000AE8334 /* Provider.swift in Sources */,
 				A7D8EF411F7840D100AE8334 /* Book.swift in Sources */,

@@ -41,7 +41,7 @@ extension RealmDataStoreType {
                 realm.add(object, update: true)
             }
         } catch let error {
-            print(error)
+            print("💔 \(error)")
             throw error
         }
     }
@@ -53,7 +53,7 @@ extension RealmDataStoreType {
                 realm.add(objects, update: true)
             }
         } catch let error {
-            print(error)
+            print("💔 \(error)")
             throw error
         }
     }
@@ -67,7 +67,7 @@ extension RealmDataStoreType {
                     realm.delete(results)
                 }
             } catch let error {
-                print(error)
+                print("💔 \(error)")
                 throw error
             }
         }
@@ -80,7 +80,7 @@ extension RealmDataStoreType {
                 realm.deleteAll()
             }
         } catch let error {
-            print(error)
+            print("💔 \(error)")
         }
     }
 }

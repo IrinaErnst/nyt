@@ -39,14 +39,7 @@ enum NYT {
 // MARK: - Endpoint closure.  Adds the API key to the header for the necessary targets.
 let endpointClosure = { (target: NYT) -> Endpoint<NYT> in
     let defaultEndpoint = MoyaProvider<NYT>.defaultEndpointMapping(for: target)
-    
-    //if target.needsToken {
-    //    return defaultEndpoint.adding(parameters: ["api-key": Constants.NewYorkTimes.books],
-            //parameters: [:],
-      //          httpHeaderFields: ["Content-Type": "application/json"])
-//    } else {
-        return defaultEndpoint.adding(newHTTPHeaderFields: ["Content-Type": "application/json"])
-//    }
+    return defaultEndpoint.adding(newHTTPHeaderFields: ["Content-Type": "application/json"])
 }
 
 // MARK: Conformance to TargetType
@@ -97,13 +90,7 @@ extension NYT: TargetType {
     }
     
     var parameterEncoding: ParameterEncoding {
-//        switch self {
-//        case .retrieveLists:
-//            //return URLEncoding.default
-//            return JSONEncoding.default
-//        default:
-            return JSONEncoding.default
-//        }
+        return JSONEncoding.default
     }
     
     // MARK: - Sample Data.

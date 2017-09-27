@@ -30,7 +30,7 @@ final class Book: Object, Deserializable {
     
     // MARK: - Primary key
     override static func primaryKey() -> String? {
-        return "list_name"
+        return "amazon_product_url"
     }
     
     // MARK: - Deserializer
@@ -47,17 +47,16 @@ final class Book: Object, Deserializable {
         let amazon_product_url = json["amazon_product_url"]
         
         var book_details = Book_details()
-        if let bookDetailsJsonArray = json["book_details"] as? JSONArray {
-            if let bookDetailsJson = bookDetailsJsonArray.first {
-                book_details = Book_details.deserialize(from: bookDetailsJson)
+        if let book_details_array = json["book_details"] as? JSONArray {
+            //for book_details in book_details_array {
+            if let bookDetails = book_details_array.first {
+                book_details = Book_details.deserialize(from: bookDetails)
             }
         }
         var reviews = [Review]()
         if let reviewsJsonArray = json["reviews"] as? JSONArray {
             for review in reviewsJsonArray {
-                //if let reviewJson = bookDetailsJsonArray.first as? JSONDictionary {
                     reviews.append(Review.deserialize(from: review))
-                //}
             }
         }
         
