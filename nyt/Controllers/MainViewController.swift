@@ -35,22 +35,29 @@ class MainViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    @objc func segmentTapped(sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            retrieveBestsellers(list: "e-book-fiction")
+        } else {
+            retrieveBestsellers(list: "hardcover-fiction")
+        }
+    }
+    
     // MARK: - Networking
-    func retrieveBestsellersList() {
-        let target = NYT.retrieveLists(dictionary: ["list":"e-book-fiction"])
-        bookService.retrieveListsOfBooks(for: target,
-                                         completion: { [unowned self] result in
-                                            switch result {
-                                            case .success(let books):
-                                                // TODO: display result in Table view
-                                                self.allBooks = books
-                                                self.booksToDisplay = books
-                                                self.tableView.reloadData()
-                                                return
-                                            case let .failure(error):
-                                                print(error)
-                                                return
-                                            }
+    func retrieveBestsellers(list: String) {
+        let target = NYT.retrieveLists(dictionary: ["list": list])
+        bookService.retrieveListsOfBooks(for: target, completion: { [unowned self] result in
+            switch result {
+            case .success(let books):
+                // TODO: display result in Table view
+                self.allBooks = books
+                self.booksToDisplay = books
+                self.tableView.reloadData()
+                return
+            case let .failure(error):
+                print(error)
+                return
+            }
         })
     }
 }
@@ -107,7 +114,9 @@ extension MainViewController {
 
     func configureView(){
         configureTableView()
-        retrieveBestsellersList()
+        retrieveBestsellers(list: "e-book-fiction")
+        
+        segmentedControl.addTarget(self, action: #selector(segmentTapped(sender:)), for: .allEvents)
     }
     
     func configureTableView() {
