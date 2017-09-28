@@ -29,7 +29,7 @@ struct BookService: NetworkServiceType {
         self.provider = provider
     }
     
-    // Updates the user's profile information (general) for a target
+    // Retrive books information for a target
     func retrieveListsOfBooks(for target: NYT,
                        completion: @escaping (Result<[Book], Moya.MoyaError>) -> Void) {
         

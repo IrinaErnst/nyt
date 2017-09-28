@@ -82,8 +82,6 @@ extension NYT: TargetType {
     // MARK: - Parameters
     var parameters: [String: Any]? {
         switch self {
-            
-        // Signup & login
         case .retrieveLists(let dictionary):
             return dictionary
         }

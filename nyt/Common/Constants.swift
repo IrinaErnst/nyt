@@ -11,7 +11,7 @@ import Foundation
 // App constants
 struct Constants {
     
-    // MARK: - private initializer.  Safeguard against developers attempting to instantiate.
+    // MARK: - private initializer
     private init() {}
     
     struct Networking {
