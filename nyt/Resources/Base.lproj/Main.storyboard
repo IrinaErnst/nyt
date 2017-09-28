@@ -82,7 +82,6 @@
                                             <outlet property="authorNameLabel" destination="oId-2v-xan" id="O5O-eF-5dK"/>
                                             <outlet property="bookNameLabel" destination="Wf9-Oz-9Ee" id="5cu-53-72c"/>
                                             <outlet property="rankLabel" destination="QP7-ll-jcI" id="9zj-G3-Mfd"/>
-                                            <segue destination="d2p-gQ-lem" kind="show" id="jjq-J2-hDj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -104,6 +103,7 @@
                     <connections>
                         <outlet property="segmentedControl" destination="Wil-UX-GQR" id="iyY-OD-HNM"/>
                         <outlet property="tableView" destination="PYC-7f-gBc" id="3zh-pS-ddC"/>
+                        <segue destination="d2p-gQ-lem" kind="show" identifier="bookSegue" id="vDv-Zf-UnG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tvX-NA-Sjn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -113,12 +113,12 @@
         <!--Book-->
         <scene sceneID="D6E-9W-HmU">
             <objects>
-                <viewController title="Book" id="d2p-gQ-lem" sceneMemberID="viewController">
+                <viewController title="Book" id="d2p-gQ-lem" customClass="BookViewController" customModule="nyt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WaR-La-iPv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UzW-H6-MRo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UzW-H6-MRo">
                                 <rect key="frame" x="20" y="10" width="335" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Ray-Dy-T5f"/>
@@ -151,7 +151,7 @@
                                 <rect key="frame" x="20" y="336" width="335" height="152"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oBn-8U-O1a">
-                                        <rect key="frame" x="0.0" y="0.0" width="132" height="152"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="134.5" height="152"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publisher: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuh-Mi-Et3">
                                                 <rect key="frame" x="0.0" y="0.0" width="74" height="17"/>
@@ -192,7 +192,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pgh-96-fBj">
-                                        <rect key="frame" x="152" y="0.0" width="183" height="152"/>
+                                        <rect key="frame" x="155" y="0.0" width="180" height="152"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publisher Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUJ-LG-yWs">
                                                 <rect key="frame" x="0.0" y="0.0" width="102" height="17"/>
@@ -225,7 +225,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Number Weeks On The List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iq7-qK-l1K">
-                                                <rect key="frame" x="0.0" y="135" width="180.5" height="17"/>
+                                                <rect key="frame" x="0.0" y="135" width="180" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -240,11 +240,10 @@
                                     <constraint firstItem="pgh-96-fBj" firstAttribute="trailing" secondItem="Uxs-Ly-mjX" secondAttribute="trailingMargin" id="5c7-ib-2zY"/>
                                     <constraint firstItem="oBn-8U-O1a" firstAttribute="bottom" secondItem="pgh-96-fBj" secondAttribute="bottom" id="6dT-EM-3QP"/>
                                     <constraint firstItem="oBn-8U-O1a" firstAttribute="leading" secondItem="Uxs-Ly-mjX" secondAttribute="leading" id="8YM-Id-mdI"/>
-                                    <constraint firstItem="pgh-96-fBj" firstAttribute="leading" secondItem="Uxs-Ly-mjX" secondAttribute="leading" constant="152" id="9V9-ic-JG5"/>
                                     <constraint firstItem="pgh-96-fBj" firstAttribute="top" secondItem="Uxs-Ly-mjX" secondAttribute="top" id="9vg-aR-1Gc"/>
                                     <constraint firstItem="oBn-8U-O1a" firstAttribute="top" secondItem="Uxs-Ly-mjX" secondAttribute="top" id="GJy-fh-KiJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="oBn-8U-O1a" secondAttribute="trailing" constant="203" id="GY6-CM-hch"/>
-                                    <constraint firstItem="pgh-96-fBj" firstAttribute="leading" secondItem="Uxs-Ly-mjX" secondAttribute="leading" constant="152" id="N4f-jz-BKV"/>
+                                    <constraint firstAttribute="trailing" secondItem="oBn-8U-O1a" secondAttribute="trailing" constant="201" id="GY6-CM-hch"/>
+                                    <constraint firstItem="pgh-96-fBj" firstAttribute="leading" secondItem="Uxs-Ly-mjX" secondAttribute="leading" constant="155" id="N4f-jz-BKV"/>
                                     <constraint firstItem="pgh-96-fBj" firstAttribute="top" secondItem="Uxs-Ly-mjX" secondAttribute="top" id="Nhp-qQ-Qx6"/>
                                     <constraint firstItem="pgh-96-fBj" firstAttribute="centerY" secondItem="Uxs-Ly-mjX" secondAttribute="centerY" id="PgJ-BG-pwe"/>
                                     <constraint firstItem="oBn-8U-O1a" firstAttribute="top" secondItem="Uxs-Ly-mjX" secondAttribute="top" id="QLf-tf-s5n"/>
@@ -273,12 +272,15 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLj-w7-Xno">
-                                <rect key="frame" x="109" y="538" width="156" height="55"/>
+                                <rect key="frame" x="109.5" y="538" width="156" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="156" id="ieD-ii-DA8"/>
                                     <constraint firstAttribute="height" constant="55" id="v2g-jO-6HX"/>
                                 </constraints>
                                 <state key="normal" image="AmazonButton"/>
+                                <connections>
+                                    <segue destination="gje-4g-sZ3" kind="show" id="wrC-A0-bsH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -301,10 +303,53 @@
                         <viewLayoutGuide key="safeArea" id="lUB-pO-foj"/>
                     </view>
                     <navigationItem key="navigationItem" title="Book Details" id="LK6-df-4YU"/>
+                    <connections>
+                        <outlet property="authorNameLabel" destination="i5S-h4-eVy" id="woY-4s-rMh"/>
+                        <outlet property="bestsellerDateLabel" destination="kDP-Ib-0F6" id="hYh-Dc-WkJ"/>
+                        <outlet property="bookDescriptionTextField" destination="1Z2-dD-jTF" id="Abx-6u-Dqm"/>
+                        <outlet property="bookView" destination="WaR-La-iPv" id="cjC-Kc-4MF"/>
+                        <outlet property="currentRankLabel" destination="CmB-wm-Kes" id="spg-fx-b2A"/>
+                        <outlet property="numberWeeksOnTheListLabel" destination="iq7-qK-l1K" id="E0e-e9-Fpl"/>
+                        <outlet property="publishedDateLabel" destination="Tpo-Nf-hGh" id="7iU-Cs-bWF"/>
+                        <outlet property="publisherLabel" destination="BUJ-LG-yWs" id="R6c-rz-462"/>
+                        <outlet property="rankLastWeekLabel" destination="jwV-5k-Ott" id="d8X-Gv-asR"/>
+                        <outlet property="titleLabel" destination="UzW-H6-MRo" id="DhH-wy-JPM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nji-dy-bb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1074.4000000000001" y="230.73463268365819"/>
+            <point key="canvasLocation" x="1145" y="234"/>
+        </scene>
+        <!--Amazon-->
+        <scene sceneID="dmk-I7-UJk">
+            <objects>
+                <viewController title="Amazon" id="gje-4g-sZ3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yJ5-2w-cn0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="34K-Og-lZ6">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DHK-dq-NIr" firstAttribute="bottom" secondItem="34K-Og-lZ6" secondAttribute="bottom" id="Bdy-3N-2f6"/>
+                            <constraint firstItem="34K-Og-lZ6" firstAttribute="top" secondItem="DHK-dq-NIr" secondAttribute="top" id="cbv-hX-hcX"/>
+                            <constraint firstItem="DHK-dq-NIr" firstAttribute="trailing" secondItem="34K-Og-lZ6" secondAttribute="trailing" id="qaL-BY-X6D"/>
+                            <constraint firstItem="34K-Og-lZ6" firstAttribute="leading" secondItem="DHK-dq-NIr" secondAttribute="leading" id="zPW-6v-MRm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DHK-dq-NIr"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rya-oD-KES" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1881" y="231"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GDP-zG-Dl9">

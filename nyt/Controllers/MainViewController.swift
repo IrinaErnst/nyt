@@ -22,32 +22,36 @@ class MainViewController: UIViewController {
     let cellID = "bookCell"
     var allBooks: [Book] = []
     var booksToDisplay: [Book] = []
+    var selectedBook: Book?
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureView()
-        
-        let target = NYT.retrieveLists(dictionary: ["list":"e-book-fiction"])
-        bookService.retrieveListsOfBooks(for: target,
-                                         completion: { [unowned self] result in
-            switch result {
-            case .success(let books):
-                // TODO: display result in Table view
-                self.allBooks = books
-                self.booksToDisplay = books
-                self.tableView.reloadData()
-                return
-            case let .failure(error):
-                print(error)
-                return
-            }
-        })
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    // MARK: - Networking
+    func retrieveBestsellersList() {
+        let target = NYT.retrieveLists(dictionary: ["list":"e-book-fiction"])
+        bookService.retrieveListsOfBooks(for: target,
+                                         completion: { [unowned self] result in
+                                            switch result {
+                                            case .success(let books):
+                                                // TODO: display result in Table view
+                                                self.allBooks = books
+                                                self.booksToDisplay = books
+                                                self.tableView.reloadData()
+                                                return
+                                            case let .failure(error):
+                                                print(error)
+                                                return
+                                            }
+        })
     }
 }
 
@@ -69,28 +73,45 @@ extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "bookSegue") {
+            if let bookViewController = segue.destination as? BookViewController {
+                bookViewController.book = selectedBook
+            }
+        }
+    }
 
 }
 
+// MARK: - UITableViewDelegate
+extension MainViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let bookViewController  = BookViewController()
+        selectedBook = booksToDisplay[indexPath.row]
+        bookViewController.book = selectedBook
+
+        performSegue(withIdentifier: "bookSegue", sender: self)
+    }
+}
+
+
 // MARK: - Table View Configure
-extension MainViewController: UITableViewDelegate{
+extension MainViewController {
 
     func configureView(){
-        
-        segmentedControl.layer.cornerRadius = 0
-        segmentedControl.layer.masksToBounds = true
-        
         configureTableView()
+        retrieveBestsellersList()
     }
     
     func configureTableView() {
-        
         tableView.backgroundColor = Colors.black
         
         tableView.delegate = self
         tableView.dataSource = self
 
-        // tableView.bounces = false
         tableView.tableFooterView = UIView(frame: .zero)
     }
 }
