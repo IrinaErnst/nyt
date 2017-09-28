@@ -279,7 +279,7 @@
                                 </constraints>
                                 <state key="normal" image="AmazonButton"/>
                                 <connections>
-                                    <segue destination="gje-4g-sZ3" kind="show" id="wrC-A0-bsH"/>
+                                    <segue destination="gje-4g-sZ3" kind="show" identifier="amazonSegue" id="wrC-A0-bsH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -323,7 +323,7 @@
         <!--Amazon-->
         <scene sceneID="dmk-I7-UJk">
             <objects>
-                <viewController title="Amazon" id="gje-4g-sZ3" sceneMemberID="viewController">
+                <viewController title="Amazon" id="gje-4g-sZ3" customClass="WebViewController" customModule="nyt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yJ5-2w-cn0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -346,6 +346,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DHK-dq-NIr"/>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="34K-Og-lZ6" id="D9O-HP-WBk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rya-oD-KES" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -41,6 +41,17 @@ class BookViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "amazonSegue") {
+            if let webViewController = segue.destination as? WebViewController {
+                webViewController.amazonLink = book?.amazon_product_url
+                webViewController.navigationItem.title = book?.book_details?.title
+            }
+        }
+    }
+
 
 }
 
