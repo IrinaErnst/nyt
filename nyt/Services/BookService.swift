@@ -29,18 +29,6 @@ struct BookService: NetworkServiceType {
         self.provider = provider
     }
     
-//    // Update user profile
-//    func retrieveListsOfBooks(for target: NYT, dictionary: JSONDictionary) {
-//        updateProfile(for: target) { result in
-//            switch result {
-//            case let .success(jsonResponse):
-//                log.info("Success 💁🏻 -> updated user general settings: \(jsonResponse)")
-//            case let .failure(error):
-//                log.error("Error updating profile: \(error)")
-//            }
-//        }
-//    }
-    
     // Updates the user's profile information (general) for a target
     func retrieveListsOfBooks(for target: NYT,
                        completion: @escaping (Result<[Book], Moya.MoyaError>) -> Void) {
@@ -49,7 +37,6 @@ struct BookService: NetworkServiceType {
             switch result {
             case let .success(json):
                 let booksJson = json["results"] as! JSONArray
-                //let bookListJson = json["results"] as! JSONDictionary
                 
                 var books = [Book]()
                 for book in booksJson {

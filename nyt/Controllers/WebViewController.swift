@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class WebViewController: UIViewController, WKNavigationDelegate {
+class WebViewController: UIViewController {
 
     // MARK: - @IBOutlet(s)
     @IBOutlet weak var webView: WKWebView!
@@ -33,15 +33,17 @@ class WebViewController: UIViewController, WKNavigationDelegate {
             webView.load(URLRequest(url: url))
         }
     }
+}
+
+// MARK: - WKNavigationDelegate 
+extension WebViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
     
-    
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
-        //activityIndicator?.isHidden = true
         activityIndicator?.stopAnimating()
     }
 }

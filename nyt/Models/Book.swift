@@ -48,7 +48,6 @@ final class Book: Object, Deserializable {
         
         var book_details = Book_details()
         if let book_details_array = json["book_details"] as? JSONArray {
-            //for book_details in book_details_array {
             if let bookDetails = book_details_array.first {
                 book_details = Book_details.deserialize(from: bookDetails)
             }
