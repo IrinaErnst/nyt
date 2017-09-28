@@ -55,7 +55,7 @@ extension BookViewController {
     func configureBookView() {
         if let book = book {
             titleLabel.text = book.book_details?.title
-            authorNameLabel.text = "by " + book.book_details?.author
+            authorNameLabel.text = "by " + (book.book_details?.author ?? "Unknown Author")
             bookDescriptionTextField.text = book.book_details?.full_description
             publisherLabel.text = book.book_details?.publisher
             publishedDateLabel.text = book.published_date

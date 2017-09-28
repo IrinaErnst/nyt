@@ -65,6 +65,10 @@ extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID,
                                                  for: indexPath) as! BookTableViewCell
+        // Change color of the selected cell
+        let backgroundCellView = UIView()
+        backgroundCellView.backgroundColor = Colors.darkGrey
+        cell.selectedBackgroundView = backgroundCellView
 
         cell.book = booksToDisplay[indexPath.row]
         return cell

@@ -30,6 +30,7 @@
 		A7D8EF481F788AB500AE8334 /* Deserializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8EF471F788AB500AE8334 /* Deserializable.swift */; };
 		A7D8EF4A1F788B4700AE8334 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8EF491F788B4700AE8334 /* JSON.swift */; };
 		A7F30D531F7C2C2F00E81F85 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F30D521F7C2C2F00E81F85 /* BookViewController.swift */; };
+		A7F30D551F7D481400E81F85 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F30D541F7D481400E81F85 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		A7D8EF471F788AB500AE8334 /* Deserializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deserializable.swift; sourceTree = "<group>"; };
 		A7D8EF491F788B4700AE8334 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		A7F30D521F7C2C2F00E81F85 /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
+		A7F30D541F7D481400E81F85 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		CB051E422EAAE7CFE615A132 /* Pods-nyt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyt.release.xcconfig"; path = "Pods/Target Support Files/Pods-nyt/Pods-nyt.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,6 +183,7 @@
 			children = (
 				A7D8EF2A1F75BBB800AE8334 /* MainViewController.swift */,
 				A7F30D521F7C2C2F00E81F85 /* BookViewController.swift */,
+				A7F30D541F7D481400E81F85 /* WebViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7F30D551F7D481400E81F85 /* WebViewController.swift in Sources */,
 				A7D8EF481F788AB500AE8334 /* Deserializable.swift in Sources */,
 				A7D8EF4A1F788B4700AE8334 /* JSON.swift in Sources */,
 				A7D8EF3D1F77578100AE8334 /* DefaultAlamofireManager.swift in Sources */,
